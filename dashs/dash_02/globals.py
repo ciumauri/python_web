@@ -1,5 +1,6 @@
-import pandas as pd
 import os
+
+import pandas as pd
 
 if ("df_greens.csv" in os.listdir()) and ("df_reds.csv" in os.listdir()):
     df_greens = pd.read_csv("df_greens.csv", index_col=0, parse_dates=True)
@@ -7,16 +8,16 @@ if ("df_greens.csv" in os.listdir()) and ("df_reds.csv" in os.listdir()):
 
 else:
     data_structure = {
-        'Description': [],
-        'Date': [],
-        'Market': [],
         'Value': [],
+        'Date': [],
         'Odds': [],
+        'Market': [],
+        'Description': [],
     }
     df_greens = pd.DataFrame(data_structure)
     df_reds = pd.DataFrame(data_structure)
-    df_greens.to_csv("datas/df_greens.csv")
-    df_reds.to_csv("datas/df_reds.csv")
+    df_greens.to_csv("df_greens.csv")
+    df_reds.to_csv("df_reds.csv")
 
 if "df_mkt_list.csv" in os.listdir():
     df_mkt_list = pd.read_csv("df_mkt_list.csv", index_col=0, parse_dates=True)
@@ -44,4 +45,4 @@ else:
         ]}
 
 df_mkt_list = pd.DataFrame(data_market_list)
-df_mkt_list.to_csv("datas/df_mkt_list.csv")
+df_mkt_list.to_csv("df_mkt_list.csv")

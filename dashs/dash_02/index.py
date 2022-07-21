@@ -1,5 +1,6 @@
 from dash import html, dcc
 from dash.dependencies import Input, Output, State
+import dash_bootstrap_components as dbc
 from flask_login import current_user, LoginManager
 
 from app import *
@@ -28,7 +29,7 @@ app.layout = html.Div(children=[
 ], style={"padding": "0px"})
 
 
-# =========  Callbacks Page1  =========== #
+# =========  Callbacks Index  =========== #
 @login_manager.user_loader
 def load_user(user_id):
     return Users.query.get(int(user_id))

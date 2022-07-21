@@ -1,15 +1,14 @@
 import os
-import dash
-from dash import html, dcc
-from dash.dependencies import Input, Output, State
-import dash_bootstrap_components as dbc
+from datetime import date, datetime
 
-from app import *
-from datetime import datetime, date
-import plotly.express as px
+import dash
+import dash_bootstrap_components as dbc
 import numpy as np
 import pandas as pd
-
+import plotly.express as px
+from app import *
+from dash import dcc, html
+from dash.dependencies import Input, Output, State
 from globals import *
 
 # ========= Layout ========= #
@@ -77,8 +76,8 @@ layout = dbc.Col([
                         dbc.Col([
                             dbc.Label('Mercados : '),
                             dbc.Select(id='market-select',
-                                       options=[{'label': i, 'value': i} for i in data_market_list['Description']],
-                                       value=data_market_list['Description'][0]),
+                                       options=[{'label': i, 'value': i} for i in data_market_list],
+                                       value=data_market_list[0]),
                         ], width=4),
                     ], style={"margin-top": "25px", "margin-bottom": "25px", }),
 
@@ -162,8 +161,8 @@ layout = dbc.Col([
                         dbc.Col([
                             dbc.Label('Mercados : '),
                             dbc.Select(id='market-select',
-                                       options=[{'label': i, 'value': i} for i in data_market_list['Description']],
-                                       value=data_market_list['Description'][0]),
+                                       options=[{'label': i, 'value': i} for i in data_market_list],
+                                       value=data_market_list[0]),
                         ], width=4),
                     ], style={"margin-top": "25px", "margin-bottom": "25px", }),
 
@@ -228,7 +227,7 @@ layout = dbc.Col([
     Input('open-new-green', 'n_clicks'),
     State('modal-new-green', 'is_open')
 )
-def open_modal_green(n, is_open):
+def toggle_modal_green(n, is_open):
     if n:
         return not is_open
 
@@ -239,6 +238,35 @@ def open_modal_green(n, is_open):
     Input('open-new-red', 'n_clicks'),
     State('modal-new-red', 'is_open')
 )
-def open_modal_green(n, is_open):
+def toggle_modal_green(n, is_open):
     if n:
         return not is_open
+
+
+# Salvar novo Green
+@app.callback(
+    Output('store-green', 'data'),
+    Input('save-new-green', 'n_clicks'),
+    [
+        State('new-green-desc', 'value'),
+        State('value_green', 'value'),
+        State('new-green-date', 'date'),
+        State('odd_green', 'value'),
+        State('market-select', 'value'),
+        State('store-green', 'data'),
+    ]
+)
+def save_new_green(n, desc, value, date, odd, market, dict_greens):
+    df_greens = pd.DataFrame(dict_greens)
+
+    if n and not(value == "" or value is None):
+        value = round(float(value), 2)
+        date = pd.to_datetime(date).date()
+        market = market[0]
+        odd = round(float(odd), 2)
+
+        df_greens.loc[df_greens.shape[0]] = [value, odd, date, market, desc]
+        df_greens.to_csv('df_greens.csv')
+
+    data_return = df_greens.to_dict()
+    return data_return
