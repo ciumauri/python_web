@@ -262,7 +262,7 @@ def save_new_green(n, desc, value, date, odd, market, dict_greens):
     if n and not (value == "" or value is None):
         value = round(float(value), 2)
         date = pd.to_datetime(date).date()
-        market = market
+        market = market[0] if type(market) == list else market
         odd = round(float(odd), 2)
 
         df_greens.loc[df_greens.shape[0]] = [value, date, odd, market, desc]
