@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="748ddaa4-c9e2-4059-aa77-d95288a9b71f" name="Changes" comment="Tela de login concluida">
-      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/python_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/python_web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dash_02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dash_02.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="748ddaa4-c9e2-4059-aa77-d95288a9b71f" name="Changes" comment="Salvador receitas ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/_sidebar.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/_sidebar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datas/df_greens.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datas/df_greens.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datas/df_reds.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datas/df_reds.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/data.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/df_greens.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/df_mkt_list.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/df_reds.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datas/df_greens.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datas/df_mkt_list.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datas/df_reds.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/df_greens.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/df_mkt_list.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/df_reds.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/globals.py" beforeDir="false" afterPath="$PROJECT_DIR$/globals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/index.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +181,7 @@
       <workItem from="1658062768001" duration="2332000" />
       <workItem from="1658075077163" duration="10161000" />
       <workItem from="1658418721413" duration="7974000" />
+      <workItem from="1658432274035" duration="7398000" />
     </task>
     <task id="LOCAL-00001" summary="Tela de login concluida">
       <created>1658022055832</created>
@@ -186,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658022055832</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Salvador receitas ok">
+      <created>1658432572766</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1658432572766</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,14 +216,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tela de login concluida" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tela de login concluida" />
+    <MESSAGE value="Salvador receitas ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Salvador receitas ok" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/dash_02$globals.coverage" NAME="globals Coverage Results" MODIFIED="1658419039966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/dash_02$index.coverage" NAME="index Coverage Results" MODIFIED="1658427361907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dash_02$index.coverage" NAME="index Coverage Results" MODIFIED="1658512029153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dash_02$app.coverage" NAME="app Coverage Results" MODIFIED="1657976526099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dash_02$create_database__1_.coverage" NAME="create_database (1) Coverage Results" MODIFIED="1658017796608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/dash_02$_sidebar.coverage" NAME="_sidebar Coverage Results" MODIFIED="1658423556689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/components" />
+    <SUITE FILE_PATH="coverage/dash_02$_sidebar.coverage" NAME="_sidebar Coverage Results" MODIFIED="1658432401502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/components" />
     <SUITE FILE_PATH="coverage/dash_02$create_database.coverage" NAME="create_database Coverage Results" MODIFIED="1658022798226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
