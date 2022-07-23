@@ -1,0 +1,338 @@
+Index: datas/df_greens.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/datas/df_greens.csv b/datas/df_greens.csv
+deleted file mode 100644
+--- a/datas/df_greens.csv	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ /dev/null	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
+@@ -1,1 +0,0 @@
+-,Value,Date,Odds,Market,Description
+Index: components/df_greens.csv
+===================================================================
+diff --git a/components/df_greens.csv b/components/df_greens.csv
+deleted file mode 100644
+--- a/components/df_greens.csv	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ /dev/null	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
+@@ -1,1 +0,0 @@
+-,Value,Date,Odds,Market,Description
+Index: components/df_mkt_list.csv
+===================================================================
+diff --git a/components/df_mkt_list.csv b/components/df_mkt_list.csv
+deleted file mode 100644
+--- a/components/df_mkt_list.csv	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ /dev/null	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
+@@ -1,17 +0,0 @@
+-,0
+-0,Back Favorito
+-1,Back Zebra
+-2,Lay Favorito
+-3,Lay Zebra
+-4,Over 0.5HT
+-5,Over 0.5FT
+-6,Over 1.5FT
+-7,Over 2.5FT
+-8,Under 1.5FT
+-9,Under 2.5FT
+-10,Under 3.5FT
+-11,Cantos Over
+-12,Cantos Under
+-13,Cantos Asiáticos
+-14,Gols Asiáticos
+-15,Handcap Asiático
+Index: datas/df_mkt_list.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/datas/df_mkt_list.csv b/datas/df_mkt_list.csv
+deleted file mode 100644
+--- a/datas/df_mkt_list.csv	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ /dev/null	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
+@@ -1,17 +0,0 @@
+-,Description
+-0,Back Favorito
+-1,Back Zebra
+-2,Lay Favorito
+-3,Lay Zebra
+-4,Over 0.5HT
+-5,Over 0.5FT
+-6,Over 1.5FT
+-7,Over 2.5FT
+-8,Under 1.5FT
+-9,Under 2.5FT
+-10,Under 3.5FT
+-11,Cantos Over
+-12,Cantos Under
+-13,Cantos Asiáticos
+-14,Gols Asiáticos
+-15,Handcap Asiático
+Index: df_greens.csv
+===================================================================
+diff --git a/df_greens.csv b/df_greens.csv
+deleted file mode 100644
+--- a/df_greens.csv	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ /dev/null	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
+@@ -1,1 +0,0 @@
+-,Value,Date,Odds,Market,Description
+Index: df_reds.csv
+===================================================================
+diff --git a/df_reds.csv b/df_reds.csv
+deleted file mode 100644
+--- a/df_reds.csv	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ /dev/null	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
+@@ -1,1 +0,0 @@
+-,Value,Date,Odds,Market,Description
+Index: components/df_reds.csv
+===================================================================
+diff --git a/components/df_reds.csv b/components/df_reds.csv
+deleted file mode 100644
+--- a/components/df_reds.csv	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ /dev/null	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
+@@ -1,1 +0,0 @@
+-,Value,Date,Odds,Market,Description
+Index: datas/df_reds.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/datas/df_reds.csv b/datas/df_reds.csv
+deleted file mode 100644
+--- a/datas/df_reds.csv	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ /dev/null	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
+@@ -1,1 +0,0 @@
+-,Value,Date,Odds,Market,Description
+Index: df_mkt_list.csv
+===================================================================
+diff --git a/df_mkt_list.csv b/df_mkt_list.csv
+deleted file mode 100644
+--- a/df_mkt_list.csv	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ /dev/null	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
+@@ -1,17 +0,0 @@
+-,0
+-0,Back Favorito
+-1,Back Zebra
+-2,Lay Favorito
+-3,Lay Zebra
+-4,Over 0.5HT
+-5,Over 0.5FT
+-6,Over 1.5FT
+-7,Over 2.5FT
+-8,Under 1.5FT
+-9,Under 2.5FT
+-10,Under 3.5FT
+-11,Cantos Over
+-12,Cantos Under
+-13,Cantos Asiáticos
+-14,Gols Asiáticos
+-15,Handcap Asiático
+Index: globals.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import os\r\n\r\nimport pandas as pd\r\n\r\nif (\"df_greens.csv\" in os.listdir()) and (\"df_reds.csv\" in os.listdir()):\r\n    df_greens = pd.read_csv(\"df_greens.csv\", index_col=0, parse_dates=True)\r\n    df_reds = pd.read_csv(\"df_reds.csv\", index_col=0, parse_dates=True)\r\n\r\nelse:\r\n    data_structure = {\r\n        'Value': [],\r\n        'Date': [],\r\n        'Odds': [],\r\n        'Market': [],\r\n        'Description': [],\r\n    }\r\n    df_greens = pd.DataFrame(data_structure)\r\n    df_reds = pd.DataFrame(data_structure)\r\n    df_greens.to_csv(\"df_greens.csv\")\r\n    df_reds.to_csv(\"df_reds.csv\")\r\n\r\nif \"df_mkt_list.csv\" in os.listdir():\r\n    df_mkt_list = pd.read_csv(\"df_mkt_list.csv\", index_col=0, parse_dates=True)\r\n    data_market_list = df_mkt_list.values.tolist()\r\n\r\nelse:\r\n    data_market_list = {\r\n        'Description': [\r\n            'Back Favorito',\r\n            'Back Zebra',\r\n            'Lay Favorito',\r\n            'Lay Zebra',\r\n            'Over 0.5HT',\r\n            'Over 0.5FT',\r\n            'Over 1.5FT',\r\n            'Over 2.5FT',\r\n            'Under 1.5FT',\r\n            'Under 2.5FT',\r\n            'Under 3.5FT',\r\n            'Cantos Over',\r\n            'Cantos Under',\r\n            'Cantos Asiáticos',\r\n            'Gols Asiáticos',\r\n            'Handcap Asiático'\r\n        ]}\r\n\r\ndf_mkt_list = pd.DataFrame(data_market_list)\r\ndf_mkt_list.to_csv(\"df_mkt_list.csv\")\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/globals.py b/globals.py
+--- a/globals.py	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ b/globals.py	(date 1658444651794)
+@@ -3,8 +3,8 @@
+ import pandas as pd
+ 
+ if ("df_greens.csv" in os.listdir()) and ("df_reds.csv" in os.listdir()):
+-    df_greens = pd.read_csv("df_greens.csv", index_col=0, parse_dates=True)
+-    df_reds = pd.read_csv("df_reds.csv", index_col=0, parse_dates=True)
++    df_greens = pd.read_csv("datas/df_greens.csv", index_col=0, parse_dates=True)
++    df_reds = pd.read_csv("datas/df_reds.csv", index_col=0, parse_dates=True)
+ 
+ else:
+     data_structure = {
+@@ -16,11 +16,11 @@
+     }
+     df_greens = pd.DataFrame(data_structure)
+     df_reds = pd.DataFrame(data_structure)
+-    df_greens.to_csv("df_greens.csv")
+-    df_reds.to_csv("df_reds.csv")
++    df_greens.to_csv("datas/df_greens.csv")
++    df_reds.to_csv("datas/df_reds.csv")
+ 
+-if "df_mkt_list.csv" in os.listdir():
+-    df_mkt_list = pd.read_csv("df_mkt_list.csv", index_col=0, parse_dates=True)
++if ("df_mkt_list.csv" in os.listdir()):
++    df_mkt_list = pd.read_csv("datas/df_mkt_list.csv", index_col=0, parse_dates=True)
+     data_market_list = df_mkt_list.values.tolist()
+ 
+ else:
+@@ -45,4 +45,4 @@
+         ]}
+ 
+ df_mkt_list = pd.DataFrame(data_market_list)
+-df_mkt_list.to_csv("df_mkt_list.csv")
++df_mkt_list.to_csv("datas/df_mkt_list.csv")
+Index: ../../.idea/python_web.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <excludeFolder url=\"file://$MODULE_DIR$/venv\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.7 (dashs)\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../.idea/python_web.iml b/../../.idea/python_web.iml
+--- a/../../.idea/python_web.iml	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ b/../../.idea/python_web.iml	(date 1658439649391)
+@@ -4,7 +4,7 @@
+     <content url="file://$MODULE_DIR$">
+       <excludeFolder url="file://$MODULE_DIR$/venv" />
+     </content>
+-    <orderEntry type="jdk" jdkName="Python 3.7 (dashs)" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.7 (python_web)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.7 (dashs)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ b/.idea/misc.xml	(date 1658440423357)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (dashs)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (python_web)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: ../../.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.7 (dashs)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../.idea/misc.xml b/../../.idea/misc.xml
+--- a/../../.idea/misc.xml	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ b/../../.idea/misc.xml	(date 1658439649651)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (dashs)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (python_web)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"748ddaa4-c9e2-4059-aa77-d95288a9b71f\" name=\"Changes\" comment=\"Tela de login concluida\">\r\n      <change beforePath=\"$PROJECT_DIR$/../../.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../../.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../../.idea/python_web.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../../.idea/python_web.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dash_02.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dash_02.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/components/_sidebar.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/components/_sidebar.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/datas/df_greens.csv\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/datas/df_greens.csv\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/datas/df_reds.csv\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/datas/df_reds.csv\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/globals.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/globals.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/index.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/index.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FlaskConsoleOptions\" custom-start-script=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\">\r\n    <envs>\r\n      <env key=\"FLASK_APP\" value=\"app\" />\r\n    </envs>\r\n    <option name=\"myCustomStartScript\" value=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\" />\r\n    <option name=\"myEnvs\">\r\n      <map>\r\n        <entry key=\"FLASK_APP\" value=\"app\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../..\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2BwwYGLHa21r4dOuEeK3yPIJLV7\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/Projetos/python/python_web/dashs/dash_02&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Development\\Python\\python_web\\dashs\\dash_02\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.index\">\r\n    <configuration name=\"_sidebar\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"dash_02\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/components\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/components/_sidebar.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"create_database\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"dash_02\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/create_database.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"globals\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"dash_02\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/globals.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"index\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"dash_02\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/index.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.index\" />\r\n        <item itemvalue=\"Python._sidebar\" />\r\n        <item itemvalue=\"Python.globals\" />\r\n        <item itemvalue=\"Python.create_database\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"748ddaa4-c9e2-4059-aa77-d95288a9b71f\" name=\"Changes\" comment=\"\" />\r\n      <created>1657830500633</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1657830500633</updated>\r\n      <workItem from=\"1657830501751\" duration=\"23000\" />\r\n      <workItem from=\"1657942737618\" duration=\"2436000\" />\r\n      <workItem from=\"1657975877326\" duration=\"62000\" />\r\n      <workItem from=\"1657975956363\" duration=\"55000\" />\r\n      <workItem from=\"1657976182516\" duration=\"288000\" />\r\n      <workItem from=\"1657976501062\" duration=\"212000\" />\r\n      <workItem from=\"1657976816304\" duration=\"2797000\" />\r\n      <workItem from=\"1658019519167\" duration=\"3611000\" />\r\n      <workItem from=\"1658062768001\" duration=\"2332000\" />\r\n      <workItem from=\"1658075077163\" duration=\"10161000\" />\r\n      <workItem from=\"1658418721413\" duration=\"7974000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Tela de login concluida\">\r\n      <created>1658022055832</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1658022055832</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Tela de login concluida\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Tela de login concluida\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/dash_02$globals.coverage\" NAME=\"globals Coverage Results\" MODIFIED=\"1658419039966\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n    <SUITE FILE_PATH=\"coverage/dash_02$index.coverage\" NAME=\"index Coverage Results\" MODIFIED=\"1658427361907\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n    <SUITE FILE_PATH=\"coverage/dash_02$app.coverage\" NAME=\"app Coverage Results\" MODIFIED=\"1657976526099\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n    <SUITE FILE_PATH=\"coverage/dash_02$create_database__1_.coverage\" NAME=\"create_database (1) Coverage Results\" MODIFIED=\"1658017796608\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n    <SUITE FILE_PATH=\"coverage/dash_02$_sidebar.coverage\" NAME=\"_sidebar Coverage Results\" MODIFIED=\"1658423556689\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/components\" />\r\n    <SUITE FILE_PATH=\"coverage/dash_02$create_database.coverage\" NAME=\"create_database Coverage Results\" MODIFIED=\"1658022798226\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ b/.idea/workspace.xml	(date 1658531282235)
+@@ -7,11 +7,17 @@
+       <change beforePath="$PROJECT_DIR$/.idea/dash_02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dash_02.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/components/_sidebar.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/_sidebar.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/datas/df_greens.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datas/df_greens.csv" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/datas/df_reds.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datas/df_reds.csv" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/components/data.sqlite" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/components/df_greens.csv" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/components/df_mkt_list.csv" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/components/df_reds.csv" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/datas/df_greens.csv" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/datas/df_mkt_list.csv" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/datas/df_reds.csv" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/df_greens.csv" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/df_mkt_list.csv" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/df_reds.csv" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/globals.py" beforeDir="false" afterPath="$PROJECT_DIR$/globals.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/index.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -46,16 +52,16 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;D:/Projetos/python/python_web/dashs/dash_02&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "last_opened_file_path": "D:/projetos/development/python/python_web/dashs/dash_02",
++    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Development\Python\python_web\dashs\dash_02" />
+@@ -153,8 +159,8 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Python.index" />
+-        <item itemvalue="Python._sidebar" />
+         <item itemvalue="Python.globals" />
++        <item itemvalue="Python._sidebar" />
+         <item itemvalue="Python.create_database" />
+       </list>
+     </recent_temporary>
+@@ -178,6 +184,7 @@
+       <workItem from="1658062768001" duration="2332000" />
+       <workItem from="1658075077163" duration="10161000" />
+       <workItem from="1658418721413" duration="7974000" />
++      <workItem from="1658440383772" duration="4834000" />
+     </task>
+     <task id="LOCAL-00001" summary="Tela de login concluida">
+       <created>1658022055832</created>
+@@ -208,11 +215,11 @@
+     <option name="LAST_COMMIT_MESSAGE" value="Tela de login concluida" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/dash_02$globals.coverage" NAME="globals Coverage Results" MODIFIED="1658419039966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+-    <SUITE FILE_PATH="coverage/dash_02$index.coverage" NAME="index Coverage Results" MODIFIED="1658427361907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+-    <SUITE FILE_PATH="coverage/dash_02$app.coverage" NAME="app Coverage Results" MODIFIED="1657976526099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/dash_02$globals.coverage" NAME="globals Coverage Results" MODIFIED="1658444715796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/dash_02$create_database.coverage" NAME="create_database Coverage Results" MODIFIED="1658022798226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/dash_02$index.coverage" NAME="index Coverage Results" MODIFIED="1658454827027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+     <SUITE FILE_PATH="coverage/dash_02$create_database__1_.coverage" NAME="create_database (1) Coverage Results" MODIFIED="1658017796608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+     <SUITE FILE_PATH="coverage/dash_02$_sidebar.coverage" NAME="_sidebar Coverage Results" MODIFIED="1658423556689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/components" />
+-    <SUITE FILE_PATH="coverage/dash_02$create_database.coverage" NAME="create_database Coverage Results" MODIFIED="1658022798226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/dash_02$app.coverage" NAME="app Coverage Results" MODIFIED="1657976526099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/dash_02.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <excludeFolder url=\"file://$MODULE_DIR$/venv\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.7 (dashs)\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n  <component name=\"PackageRequirementsSettings\">\r\n    <option name=\"versionSpecifier\" value=\"Strong equality (==x.y.z)\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dash_02.iml b/.idea/dash_02.iml
+--- a/.idea/dash_02.iml	(revision 49f0a32ab10a0b80d9b9d55c372396d7678aec18)
++++ b/.idea/dash_02.iml	(date 1658440423197)
+@@ -4,7 +4,7 @@
+     <content url="file://$MODULE_DIR$">
+       <excludeFolder url="file://$MODULE_DIR$/venv" />
+     </content>
+-    <orderEntry type="jdk" jdkName="Python 3.7 (dashs)" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.7 (python_web)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+   <component name="PackageRequirementsSettings">
