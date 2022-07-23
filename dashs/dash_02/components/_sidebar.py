@@ -76,7 +76,7 @@ layout = dbc.Col([
 
                         dbc.Col([
                             dbc.Label('Mercados : '),
-                            dbc.Select(id='market-select',
+                            dbc.Select(id='market-select-green',
                                        options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
                                        value=data_market_list['Categoria'][0]),
                         ], width=4),
@@ -88,10 +88,10 @@ layout = dbc.Col([
                                 dbc.Row([
                                     dbc.Col([
                                         html.Legend('Adicionar Mercado', style={'color': 'green'}),
-                                        dbc.Input(id='add-new-market', type='text', placeholder='Ex: Over 1.5FT',
+                                        dbc.Input(id='add-new-market-green', type='text', placeholder='Ex: Over 1.5FT',
                                                   value=""),
                                         html.Hr(),
-                                        dbc.Button(id='add-market-list', children=['Adicionar'],
+                                        dbc.Button(id='add-market-list-green', children=['Adicionar'],
                                                    className='btn btn-success',
                                                    style={'margin-top': '20px'}),
                                         html.Hr(),
@@ -101,13 +101,13 @@ layout = dbc.Col([
                                     dbc.Col([
                                         html.Legend('Remover Mercado', style={'color': 'red'}),
                                         dbc.Checklist(
-                                            id='checklist-market',
+                                            id='checklist-market-green',
                                             options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
                                             value=[],
                                             label_checked_style={'color': 'red'},
                                             input_checked_style={'backgroundColor': 'blue', 'borderColor': 'orange'},
                                         ),
-                                        dbc.Button(id='remove-market-list', children=['Remove'],
+                                        dbc.Button(id='remove-market-list-green', children=['Remove'],
                                                    className='btn btn-danger',
                                                    style={'margin-top': '20px'}),
                                     ], width=6),
@@ -161,7 +161,7 @@ layout = dbc.Col([
 
                         dbc.Col([
                             dbc.Label('Mercados : '),
-                            dbc.Select(id='market-select',
+                            dbc.Select(id='market-select-red',
                                        options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
                                        value=data_market_list['Categoria'][0]),
                         ], width=4),
@@ -173,10 +173,10 @@ layout = dbc.Col([
                                 dbc.Row([
                                     dbc.Col([
                                         html.Legend('Adicionar Mercado', style={'color': 'green'}),
-                                        dbc.Input(id='add-new-market', type='text', placeholder='Ex: Over 1.5FT',
+                                        dbc.Input(id='add-new-market-red', type='text', placeholder='Ex: Over 1.5FT',
                                                   value=""),
                                         html.Hr(),
-                                        dbc.Button(id='add-market-list', children=['Adicionar'],
+                                        dbc.Button(id='add-market-list-red', children=['Adicionar'],
                                                    className='btn btn-success',
                                                    style={'margin-top': '20px'}),
                                         html.Hr(),
@@ -186,13 +186,13 @@ layout = dbc.Col([
                                     dbc.Col([
                                         html.Legend('Remover Mercado', style={'color': 'red'}),
                                         dbc.Checklist(
-                                            id='checklist-market',
+                                            id='checklist-market-red',
                                             options=[{'label': i, 'value': i} for i in data_market_list],
                                             value=[],
                                             label_checked_style={'color': 'red'},
                                             input_checked_style={'backgroundColor': 'blue', 'borderColor': 'orange'},
                                         ),
-                                        dbc.Button(id='remove-market-list', children=['Remove'],
+                                        dbc.Button(id='remove-market-list-red', children=['Remove'],
                                                    className='btn btn-danger',
                                                    style={'margin-top': '20px'}),
                                     ], width=6),
@@ -253,7 +253,7 @@ def toggle_modal_green(n, is_open):
         State('value_green', 'value'),
         State('new-green-date', 'date'),
         State('odd_green', 'value'),
-        State('market-select', 'value'),
+        State('market-select-green', 'value'),
         State('store-greens', 'data'),
     ]
 )
@@ -281,7 +281,7 @@ def save_new_green(n, desc, value, date, odd, market, dict_greens):
         State('value_red', 'value'),
         State('new-red-date', 'date'),
         State('odd_red', 'value'),
-        State('market-select', 'value'),
+        State('market-select-red', 'value'),
         State('store-reds', 'data'),
     ]
 )
@@ -303,16 +303,16 @@ def save_new_red(n, desc, value, date, odd, market, dict_reds):
 # Add/Remove Mercados
 @app.callback(
     [
-    Output('market-select', 'options'),
-    Output('checklist-market', 'options'),
-    Output('checklist-market', 'value'),
+    Output('market-select-red', 'options'),
+    Output('checklist-market-red', 'options'),
+    Output('checklist-market-red', 'value'),
     Output('store-mkt-list', 'data')],
 
-    [Input('add-market-list', 'n_clicks'),
-     Input('remove-market-list', 'n_clicks')],
+    [Input('add-market-list-red', 'n_clicks'),
+     Input('remove-market-list-red', 'n_clicks')],
 
-    [State('add-new-market', 'value'),
-     State('checklist-market', 'value'),
+    [State('add-new-market-red', 'value'),
+     State('checklist-market-red', 'value'),
      State('store-mkt-list', 'data')]
 )
 def add_remove_market(n_add, n_remove, new_market, market_remove, dict_mkt_list):    
