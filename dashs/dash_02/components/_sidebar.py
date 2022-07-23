@@ -270,3 +270,31 @@ def save_new_green(n, desc, value, date, odd, market, dict_greens):
 
     data_return = df_greens.to_dict()
     return data_return
+
+# Salvar novo Red
+@app.callback(
+    Output('store-reds', 'data'),
+    Input('save-new-red', 'n_clicks'),
+    [
+        State('new-red-desc', 'value'),
+        State('value_red', 'value'),
+        State('new-red-date', 'date'),
+        State('odd_red', 'value'),
+        State('market-select', 'value'),
+        State('store-reds', 'data'),
+    ]
+)
+def save_new_red(n, desc, value, date, odd, market, dict_reds):
+    df_reds = pd.DataFrame(dict_reds)
+
+    if n and not (value == "" or value is None):
+        value = round(float(value), 2)
+        date = pd.to_datetime(date).date()
+        market = market[0] if type(market) == list else market
+        odd = round(float(odd), 2)
+
+        df_reds.loc[df_greens.shape[0]] = [value, date, odd, market, desc]
+        df_reds.to_csv('datas/df_reds.csv')
+
+    data_return = df_reds.to_dict()
+    return data_return
