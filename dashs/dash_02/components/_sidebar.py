@@ -10,6 +10,7 @@ from app import *
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
 from globals import *
+from this import d
 
 # ========= Layout ========= #
 
@@ -76,8 +77,8 @@ layout = dbc.Col([
                         dbc.Col([
                             dbc.Label('Mercados : '),
                             dbc.Select(id='market-select',
-                                       options=[{'label': i, 'value': i} for i in data_market_list],
-                                       value=data_market_list[0]),
+                                       options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
+                                       value=data_market_list['Categoria'][0]),
                         ], width=4),
                     ], style={"margin-top": "25px", "margin-bottom": "25px", }),
 
@@ -87,7 +88,7 @@ layout = dbc.Col([
                                 dbc.Row([
                                     dbc.Col([
                                         html.Legend('Adicionar Mercado', style={'color': 'green'}),
-                                        dbc.Input(id='new-market', type='text', placeholder='Ex: Over 1.5FT',
+                                        dbc.Input(id='add-new-market', type='text', placeholder='Ex: Over 1.5FT',
                                                   value=""),
                                         html.Hr(),
                                         dbc.Button(id='add-market-list', children=['Adicionar'],
@@ -101,12 +102,12 @@ layout = dbc.Col([
                                         html.Legend('Remover Mercado', style={'color': 'red'}),
                                         dbc.Checklist(
                                             id='checklist-market',
-                                            options=[],
+                                            options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
                                             value=[],
                                             label_checked_style={'color': 'red'},
                                             input_checked_style={'backgroundColor': 'blue', 'borderColor': 'orange'},
                                         ),
-                                        dbc.Button(id='remove-market', children=['Remove'],
+                                        dbc.Button(id='remove-market-list', children=['Remove'],
                                                    className='btn btn-danger',
                                                    style={'margin-top': '20px'}),
                                     ], width=6),
@@ -161,8 +162,8 @@ layout = dbc.Col([
                         dbc.Col([
                             dbc.Label('Mercados : '),
                             dbc.Select(id='market-select',
-                                       options=[{'label': i, 'value': i} for i in data_market_list],
-                                       value=data_market_list[0]),
+                                       options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
+                                       value=data_market_list['Categoria'][0]),
                         ], width=4),
                     ], style={"margin-top": "25px", "margin-bottom": "25px", }),
 
@@ -172,7 +173,7 @@ layout = dbc.Col([
                                 dbc.Row([
                                     dbc.Col([
                                         html.Legend('Adicionar Mercado', style={'color': 'green'}),
-                                        dbc.Input(id='new-market', type='text', placeholder='Ex: Over 1.5FT',
+                                        dbc.Input(id='add-new-market', type='text', placeholder='Ex: Over 1.5FT',
                                                   value=""),
                                         html.Hr(),
                                         dbc.Button(id='add-market-list', children=['Adicionar'],
@@ -186,12 +187,12 @@ layout = dbc.Col([
                                         html.Legend('Remover Mercado', style={'color': 'red'}),
                                         dbc.Checklist(
                                             id='checklist-market',
-                                            options=[],
+                                            options=[{'label': i, 'value': i} for i in data_market_list],
                                             value=[],
                                             label_checked_style={'color': 'red'},
                                             input_checked_style={'backgroundColor': 'blue', 'borderColor': 'orange'},
                                         ),
-                                        dbc.Button(id='remove-market', children=['Remove'],
+                                        dbc.Button(id='remove-market-list', children=['Remove'],
                                                    className='btn btn-danger',
                                                    style={'margin-top': '20px'}),
                                     ], width=6),
@@ -298,3 +299,36 @@ def save_new_red(n, desc, value, date, odd, market, dict_reds):
 
     data_return = df_reds.to_dict()
     return data_return
+
+# Add/Remove Mercados
+@app.callback(
+    [
+    Output('market-select', 'options'),
+    Output('checklist-market', 'options'),
+    Output('checklist-market', 'value'),
+    Output('store-mkt-list', 'data')],
+
+    [Input('add-market-list', 'n_clicks'),
+     Input('remove-market-list', 'n_clicks')],
+
+    [State('add-new-market', 'value'),
+     State('checklist-market', 'value'),
+     State('store-mkt-list', 'data')]
+)
+def add_remove_market(n_add, n_remove, new_market, market_remove, dict_mkt_list):    
+
+    data_market_list = list(dict_mkt_list['Categoria'].values())    
+
+    if n_add and not (new_market == "" or new_market is None):
+        data_market_list = data_market_list + [new_market] if new_market not in data_market_list else data_market_list
+    
+    if n_remove:
+        if len(market_remove) > 0:
+            data_market_list = [i for i in data_market_list if i not in market_remove]
+
+    opt_market_list = [{'label': i, 'value': i} for i in data_market_list]
+    df_mkt_list = pd.DataFrame(dict_mkt_list, columns=['Categoria'])
+    df_mkt_list.to_csv('datas/df_mkt_list.csv')
+    data_return = df_mkt_list.to_dict()
+
+    return [opt_market_list, opt_market_list, [], data_return]

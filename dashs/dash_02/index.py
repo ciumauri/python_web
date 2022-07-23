@@ -15,7 +15,7 @@ login_manager.login_view = '/login'
 app.layout = html.Div(children=[
     dcc.Store(id='store-greens', data=df_greens.to_dict()),
     dcc.Store(id='store-reds', data=df_reds.to_dict()),
-    dcc.Store(id='store-mkt-greens', data=df_mkt_list.to_dict()),
+    dcc.Store(id='store-mkt-list', data=df_mkt_list.to_dict()),
 
     dbc.Row([
         dbc.Col([

@@ -28,24 +28,14 @@ if "df_mkt_list.csv" in os.listdir():
     data_market_list = df_mkt_list.values.tolist()
 
 else:
-    data_market_list = [
+    data_market_list = {
+        'Categoria': [
             'Back Favorito',
             'Back Zebra',
             'Lay Favorito',
             'Lay Zebra',
-            'Over 0.5HT',
-            'Over 0.5FT',
-            'Over 1.5FT',
-            'Over 2.5FT',
-            'Under 1.5FT',
-            'Under 2.5FT',
-            'Under 3.5FT',
-            'Cantos Over',
-            'Cantos Under',
-            'Cantos Asiáticos',
-            'Gols Asiáticos',
-            'Handcap Asiático'
         ]
+    }
 
 df_mkt_list = pd.DataFrame(data_market_list)
 df_mkt_list.to_csv("datas/df_mkt_list.csv")
