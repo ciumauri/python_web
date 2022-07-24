@@ -187,7 +187,7 @@ layout = dbc.Col([
                                         html.Legend('Remover Mercado', style={'color': 'red'}),
                                         dbc.Checklist(
                                             id='checklist-market-red',
-                                            options=[{'label': i, 'value': i} for i in data_market_list],
+                                            options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
                                             value=[],
                                             label_checked_style={'color': 'red'},
                                             input_checked_style={'backgroundColor': 'blue', 'borderColor': 'orange'},
@@ -308,16 +308,16 @@ def save_new_red(n, desc, value, date, odd, market, dict_reds):
         Output('market-select-green', 'options'),
         Output('checklist-market-green', 'options'),
         Output('checklist-market-green', 'value'),
-        Output('store-mkt-list', 'data')],
+        Output('store-mkt-list-green', 'data')],
 
     [Input('add-market-list-green', 'n_clicks'),
      Input('remove-market-list-green', 'n_clicks')],
 
     [State('add-new-market-green', 'value'),
      State('checklist-market-green', 'value'),
-     State('store-mkt-list', 'data')]
+     State('store-mkt-list-green', 'data')]
 )
-def add_remove_market(n_add, n_remove, new_market, market_remove, dict_mkt_list):
+def add_remove_market_green(n_add, n_remove, new_market, market_remove, dict_mkt_list):
     data_market_list = list(dict_mkt_list['Categoria'].values())
 
     if n_add and not (new_market == "" or new_market is None):
@@ -328,29 +328,29 @@ def add_remove_market(n_add, n_remove, new_market, market_remove, dict_mkt_list)
             data_market_list = [i for i in data_market_list if i not in market_remove]
 
     opt_market_list = [{'label': i, 'value': i} for i in data_market_list]
-    df_mkt_list = pd.DataFrame(dict_mkt_list, columns=['Categoria'])
+    df_mkt_list = pd.DataFrame(data_market_list, columns=['Categoria'])
     df_mkt_list.to_csv('datas/df_mkt_list.csv')
     data_return = df_mkt_list.to_dict()
 
     return [opt_market_list, opt_market_list, [], data_return]
 
 
-# Add/Remove Mercados RED
+# Add/Remove Mercados GREEN
 @app.callback(
     [
         Output('market-select-red', 'options'),
         Output('checklist-market-red', 'options'),
         Output('checklist-market-red', 'value'),
-        Output('store-mkt-list', 'data')],
+        Output('store-mkt-list-red', 'data')],
 
     [Input('add-market-list-red', 'n_clicks'),
      Input('remove-market-list-red', 'n_clicks')],
 
     [State('add-new-market-red', 'value'),
      State('checklist-market-red', 'value'),
-     State('store-mkt-list', 'data')]
+     State('store-mkt-list-red', 'data')]
 )
-def add_remove_market(n_add, n_remove, new_market, market_remove, dict_mkt_list):
+def add_remove_market_red(n_add, n_remove, new_market, market_remove, dict_mkt_list):
     data_market_list = list(dict_mkt_list['Categoria'].values())
 
     if n_add and not (new_market == "" or new_market is None):
@@ -361,6 +361,8 @@ def add_remove_market(n_add, n_remove, new_market, market_remove, dict_mkt_list)
             data_market_list = [i for i in data_market_list if i not in market_remove]
 
     opt_market_list = [{'label': i, 'value': i} for i in data_market_list]
-    df_mkt_list = pd.DataFrame(dict_mkt_list, columns=['Categoria'])
+    df_mkt_list = pd.DataFrame(data_market_list, columns=['Categoria'])
     df_mkt_list.to_csv('datas/df_mkt_list.csv')
     data_return = df_mkt_list.to_dict()
+
+    return [opt_market_list, opt_market_list, [], data_return]
