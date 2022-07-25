@@ -232,7 +232,6 @@ def toggle_modal_green(n, is_open):
     if n:
         return not is_open
 
-
 # Pop-up Red
 @app.callback(
     Output('modal-new-red', 'is_open'),
@@ -242,7 +241,6 @@ def toggle_modal_green(n, is_open):
 def toggle_modal_green(n, is_open):
     if n:
         return not is_open
-
 
 # Salvar novo Green
 @app.callback(
@@ -308,14 +306,17 @@ def save_new_red(n, desc, value, date, odd, market, dict_reds):
         Output('market-select-green', 'options'),
         Output('checklist-market-green', 'options'),
         Output('checklist-market-green', 'value'),
-        Output('store-mkt-list-green', 'data')],
-
-    [Input('add-market-list-green', 'n_clicks'),
-     Input('remove-market-list-green', 'n_clicks')],
-
-    [State('add-new-market-green', 'value'),
-     State('checklist-market-green', 'value'),
-     State('store-mkt-list-green', 'data')]
+        Output('store-mkt-list-green', 'data')
+    ],
+    [
+        Input('add-market-list-green', 'n_clicks'),
+        Input('remove-market-list-green', 'n_clicks')
+    ],
+    [
+        State('add-new-market-green', 'value'),
+        State('checklist-market-green', 'value'),
+        State('store-mkt-list-green', 'data')
+    ]
 )
 def add_remove_market_green(n_add, n_remove, new_market, market_remove, dict_mkt_list):
     data_market_list = list(dict_mkt_list['Categoria'].values())
@@ -335,20 +336,23 @@ def add_remove_market_green(n_add, n_remove, new_market, market_remove, dict_mkt
     return [opt_market_list, opt_market_list, [], data_return]
 
 
-# Add/Remove Mercados GREEN
+# Add/Remove Mercados RED
 @app.callback(
     [
         Output('market-select-red', 'options'),
         Output('checklist-market-red', 'options'),
         Output('checklist-market-red', 'value'),
-        Output('store-mkt-list-red', 'data')],
-
-    [Input('add-market-list-red', 'n_clicks'),
-     Input('remove-market-list-red', 'n_clicks')],
-
-    [State('add-new-market-red', 'value'),
-     State('checklist-market-red', 'value'),
-     State('store-mkt-list-red', 'data')]
+        Output('store-mkt-list-red', 'data')
+    ],
+    [
+        Input('add-market-list-red', 'n_clicks'),
+        Input('remove-market-list-red', 'n_clicks')
+    ],
+    [
+        State('add-new-market-red', 'value'),
+        State('checklist-market-red', 'value'),
+        State('store-mkt-list-red', 'data')
+    ]
 )
 def add_remove_market_red(n_add, n_remove, new_market, market_remove, dict_mkt_list):
     data_market_list = list(dict_mkt_list['Categoria'].values())

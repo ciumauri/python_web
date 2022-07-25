@@ -119,7 +119,21 @@ layout = dbc.Col([
         dbc.Col(dbc.Card(dcc.Graph(id='graph-2'), style={'padding': '10px', 'margin-right': '10px'}), width=3),
         dbc.Col(dbc.Card(dcc.Graph(id='graph-2'), style={'padding': '10px', 'margin-right': '20px'}), width=3),
     ]),
-
 ])
 
+
 # =========  Callbacks  =========== #
+@app.callback(
+    [
+        Output('dropdown-greens', 'options'),
+        Output('dropdown-greens', 'value'),
+        Output('green_balance', 'children')
+    ],
+    Input('store-greens', 'data')
+)
+def populate_dropdown_green(data):
+    df = pd.DataFrame(data)
+    value = df['Value'].sum()
+    val = df.Market.unique().tolist()
+
+    return
