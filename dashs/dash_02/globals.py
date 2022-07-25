@@ -12,11 +12,11 @@ if ("df_greens.csv" in os.listdir()) and ("df_reds.csv" in os.listdir()):
 
 else:
     data_structure = {
-        'Value': [],
-        'Date': [],
-        'Odds': [],
-        'Market': [],
-        'Description': [],
+        'Value': [150.0],
+        'Date': ["2022-07-24"],
+        'Odds': [1.65],
+        'Market': ["Back Favorito"],
+        'Description': ["Brasil x Argentina"],
     }
     df_greens = pd.DataFrame(data_structure)
     df_reds = pd.DataFrame(data_structure)

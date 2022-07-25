@@ -1,18 +1,18 @@
-from dash import html, dcc
-from dash.dependencies import Input, Output, State
+import calendar
 from datetime import date, datetime, timedelta
+
 import dash_bootstrap_components as dbc
-import pandas as pd
 import numpy as np
+import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import calendar
 # from globals import *
 from app import *
-
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, logout_user, current_user
+from dash import dcc, html
+from dash.dependencies import Input, Output, State
 from dash.exceptions import PreventUpdate
+from flask_login import current_user, login_user, logout_user
+from werkzeug.security import check_password_hash, generate_password_hash
 
 card_style_icon = {
     'color': '#fff',
@@ -20,6 +20,8 @@ card_style_icon = {
     'fontSize': '2.5rem',
     'margin': 'auto',
 }
+
+graph_margin = dict(t=25, b=0, l=25, r=25)
 
 # =========  Layout  =========== #
 layout = dbc.Col([
@@ -29,7 +31,7 @@ layout = dbc.Col([
             dbc.CardGroup([
                 dbc.Card([
                     html.Legend('Saldo Banca Atual'),
-                    html.H5('R$ 1.287,22', id='current_balance', style={}),
+                    html.H5('R$ 1.285,22', id='current_balance', style={}),
                 ], style={'padding-left': '20px', 'padding-top': '10px'}),
                 dbc.Card(
                     html.Div(className='fa fa-university', style=card_style_icon),
@@ -42,15 +44,15 @@ layout = dbc.Col([
         # Green
         dbc.Col([
             dbc.CardGroup([
-                dbc.Card([
-                    html.Legend('Total Greens'),
-                    html.H5('R$ 759,22', id='green_balance', style={}),
-                ], style={'padding-left': '25px', 'padding-top': '10px'}),
                 dbc.Card(
                     html.Div(className='fa fa-smile-o', style=card_style_icon),
                     color='success',
-                    style={'max-width': 75, 'height': 100, 'margin-left': '-10px', 'margin-right': '10px'}
+                    style={'max-width': 75, 'height': 100, 'margin-left': '1px'}
                 ),
+                dbc.Card([
+                    html.Legend("Total Green's"),
+                    html.H5('R$ 759,22', id='green_balance', style={}),
+                ], style={'padding-left': '25px', 'padding-top': '10px'}),
             ]),
         ], width=4),
 
@@ -58,7 +60,7 @@ layout = dbc.Col([
         dbc.Col([
             dbc.CardGroup([
                 dbc.Card([
-                    html.Legend('Total Reds'),
+                    html.Legend("Total Red's"),
                     html.H5('-R$ 366,28', id='red_balance', style={}),
                 ], style={'padding-left': '25px', 'padding-top': '10px'}),
                 dbc.Card(
@@ -123,6 +125,7 @@ layout = dbc.Col([
 
 
 # =========  Callbacks  =========== #
+# =========  Soma Greens  =========== #
 @app.callback(
     [
         Output('dropdown-greens', 'options'),
@@ -136,4 +139,67 @@ def populate_dropdown_green(data):
     value = df['Value'].sum()
     val = df.Market.unique().tolist()
 
-    return
+    return [{'label': i, 'value': i} for i in val], val, f'R$ {value:.2f}'
+
+
+# =========  Soma Reds  =========== #
+@app.callback(
+    [
+        Output('dropdown-reds', 'options'),
+        Output('dropdown-reds', 'value'),
+        Output('red_balance', 'children')
+    ],
+    Input('store-reds', 'data')
+)
+def populate_dropdown_red(data):
+    df = pd.DataFrame(data)
+    value = df['Value'].sum()
+    val = df.Market.unique().tolist()
+
+    return [{'label': i, 'value': i} for i in val], val, f'-R$ {value:.2f}'
+
+
+# =========  Soma Entradas  =========== #
+@app.callback(
+    Output('current_balance', 'children'),
+    [
+        Input('store-greens', 'data'),
+        Input('store-reds', 'data')
+    ]
+)
+def populate_entries_balance(greens, reds):
+    df_greens = pd.DataFrame(greens)
+    df_reds = pd.DataFrame(reds)
+    value = df_greens['Value'].sum() - df_reds['Value'].sum()
+    return f'R$ {value:.2f}'
+
+
+# =========  Soma Entradas  =========== #
+@app.callback(
+    Output('graph-entries', 'figure'),
+    [
+        Input('store-greens', 'data'),
+        Input('store-reds', 'data'),
+        Input('dropdown-greens', 'value'),
+        Input('dropdown-reds', 'value'),
+    ]
+)
+def update_output(data_greens, data_reds, greens, reds):
+    import pdb 
+    df_greens = pd.DataFrame(data_greens).set_index('Date')[['Value']]
+    df_gn = df_greens.groupby('Date').sum().rename(columns={'Value': 'Greens'})
+
+    df_reds = pd.DataFrame(data_reds).set_index('Date')[['Value']]
+    df_rd = df_reds.groupby('Date').sum().rename(columns={'Value': 'Reds'})
+
+    df_acum = df_gn.join(df_rd, how='outer').fillna(0)
+    df_acum['Acum'] = df_acum['Greens'] - df_acum['Reds']
+    df_acum['Acum'] = df_acum['Acum'].cumsum()
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(name="Fluxo de Caixa", x=df_acum.index, y=df_acum['Acum'], mode='lines+markers'))
+
+    fig.update_layout(margin=graph_margin, height=400)
+    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+    pdb.set_trace()
+    return fig
