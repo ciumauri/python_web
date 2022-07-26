@@ -100,7 +100,7 @@ layout = dbc.Col([
                 html.Legend('Período de Análise', style={'margin-top': '10px'}),
                 dcc.DatePickerRange(
                     id='picker-date-config',
-                    month_format='Do MMM, YY',
+                    display_format='DD/MM/YYYY',
                     end_date_placeholder_text='Data...',
                     start_date=datetime(2022, 4, 1).date(),
                     end_date=datetime.today() + timedelta(days=31),
@@ -117,9 +117,9 @@ layout = dbc.Col([
     ], style={'margin': '10px'}),
 
     dbc.Row([
-        dbc.Col(dbc.Card(dcc.Graph(id='graph-2'), style={'padding': '10px', 'margin': '10px'}), width=6),
-        dbc.Col(dbc.Card(dcc.Graph(id='graph-2'), style={'padding': '10px', 'margin-right': '10px'}), width=3),
-        dbc.Col(dbc.Card(dcc.Graph(id='graph-2'), style={'padding': '10px', 'margin-right': '20px'}), width=3),
+        dbc.Col(dbc.Card(dcc.Graph(id='graph-all'), style={'padding': '10px', 'margin': '10px'}), width=6),
+        dbc.Col(dbc.Card(dcc.Graph(id='graph-greens'), style={'padding': '10px', 'margin-right': '10px'}), width=3),
+        dbc.Col(dbc.Card(dcc.Graph(id='graph-reds'), style={'padding': '10px', 'margin-right': '20px'}), width=3),
     ]),
 ])
 
@@ -174,7 +174,7 @@ def populate_entries_balance(greens, reds):
     return f'R$ {value:.2f}'
 
 
-# =========  Soma Entradas  =========== #
+# =========  Gráfico crescimento da Banca  =========== #
 @app.callback(
     Output('graph-entries', 'figure'),
     [
@@ -185,7 +185,6 @@ def populate_entries_balance(greens, reds):
     ]
 )
 def update_output(data_greens, data_reds, greens, reds):
-
     df_greens = pd.DataFrame(data_greens).set_index('Date')[['Value']]
     df_gn = df_greens.groupby('Date').sum().rename(columns={'Value': 'Greens'})
 
@@ -200,6 +199,79 @@ def update_output(data_greens, data_reds, greens, reds):
     fig.add_trace(go.Scatter(name="Fluxo de Caixa", x=df_acum.index, y=df_acum['Acum'], mode='lines+markers'))
 
     fig.update_layout(margin=graph_margin, height=300)
+    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+
+    return fig
+
+
+# =========  Gráfico Green's x Red's  =========== #
+@app.callback(
+    Output('graph-all', 'figure'),
+    [
+        Input('store-greens', 'data'),
+        Input('store-reds', 'data'),
+        Input('dropdown-greens', 'value'),
+        Input('dropdown-reds', 'value'),
+        Input('picker-date-config', 'start_date'),
+        Input('picker-date-config', 'end_date'),
+    ]
+)
+def graph_a_view(data_greens, data_reds, greens, reds, start_date, end_date):
+    df_gr = pd.DataFrame(data_greens)
+    df_re = pd.DataFrame(data_reds)
+
+    df_gr['Output'] = "Greens"
+    df_re['Output'] = "Reds"
+    df_final = pd.concat([df_gr, df_re])
+    df_final['Date'] = pd.to_datetime(df_final['Date'])
+
+    start_date = pd.to_datetime(start_date)
+    end_date = pd.to_datetime(end_date)
+    df_final = df_final[(df_final['Date'] >= start_date) & (df_final['Date'] <= end_date)]
+    df_final = df_final[(df_final['Market'].isin(greens)) | (df_final['Market'].isin(reds))]
+
+    fig = px.bar(df_final, x='Date', y='Value', color='Output', barmode='group')
+    fig.update_layout(margin=graph_margin, height=450)
+    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+
+    return fig
+
+
+# =========  Gráfico Mercados Green's =========== #
+@app.callback(
+    Output('graph-greens', 'figure'),
+    [
+        Input('store-greens', 'data'),
+        Input('dropdown-greens', 'value'),
+    ]
+)
+def graph_greens_view(data_greens, greens):
+    df_gr = pd.DataFrame(data_greens)
+    df_gr = df_gr[df_gr['Market'].isin(greens)]
+
+    fig = px.pie(df_gr, values=df_gr.Value, names=df_gr.Market, hole=0.2)
+    fig.update_layout(title={'text': "Mercados Green's"})
+    fig.update_layout(margin=graph_margin, height=450)
+    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+
+    return fig
+
+
+# =========  Gráfico Mercados Red's =========== #
+@app.callback(
+    Output('graph-reds', 'figure'),
+    [
+        Input('store-reds', 'data'),
+        Input('dropdown-reds', 'value'),
+    ]
+)
+def graph_greens_view(data_reds, reds):
+    df_re = pd.DataFrame(data_reds)
+    df_re = df_re[df_re['Market'].isin(reds)]
+
+    fig = px.pie(df_re, values=df_re.Value, names=df_re.Market, hole=0.2)
+    fig.update_layout(title={'text': "Mercados Red's"})
+    fig.update_layout(margin=graph_margin, height=450)
     fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
 
     return fig

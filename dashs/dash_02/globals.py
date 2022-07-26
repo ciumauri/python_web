@@ -15,7 +15,7 @@ else:
         'Value': [350.0, 292.0, 325.0],
         'Date': ["2022-07-24", "2022-07-23", "2022-07-22"],
         'Odds': [1.65, 1.50, 1.69],
-        'Market': ["Back Favorito", "Lay Zebra", "Lay Favorito"],
+        'Market': ["Lay Zebra", "LTD", "Over 1.5FT"],
         'Description': ["Brasil x Argentina", "Palmeiras x Internacional", "Vasco x Bahia"],
     }
 
@@ -23,7 +23,7 @@ else:
         'Value': [150.0, 200.0, 125.0],
         'Date': ["2022-07-24", "2022-07-23", "2022-07-22"],
         'Odds': [1.65, 1.50, 1.69],
-        'Market': ["Back Favorito", "Lay Zebra", "Lay Favorito"],
+        'Market': ["Back Favorito", "Lay Favorito", "Under 3.5FT"],
         'Description': ["Brasil x Argentina", "Palmeiras x Internacional", "Vasco x Bahia"],
     }
 
@@ -38,7 +38,6 @@ if ("df_mkt_list_green.csv" in os.listdir()) and ("df_mkt_list_red.csv" in os.li
     data_market_list_green = df_mkt_list_green.values.tolist()
     data_market_list_red = df_mkt_list_red.values.tolist()
 
-
 else:
     data_market_list_green = {
         'Categoria': [
@@ -46,6 +45,8 @@ else:
             'Back Zebra',
             'Lay Favorito',
             'Lay Zebra',
+            'LTD',
+            'Over 1.5FT'
         ]
     }
 
@@ -55,6 +56,7 @@ else:
             'Back Zebra',
             'Lay Favorito',
             'Lay Zebra',
+            'Under 3.5FT'
         ]
     }
 

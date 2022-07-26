@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 from flask_login import current_user, LoginManager
 
 from app import *
-from pages import login, register, dashboard, extratos
+from pages import login, register, dashboard, extratos_greens
 from globals import *
 
 login_manager = LoginManager()
@@ -12,7 +12,7 @@ login_manager.init_app(server)
 login_manager.login_view = '/login'
 
 # =========  Layout  =========== #
-app.layout = html.Div(children=[
+app.layout = dbc.Container(children=[
     dcc.Store(id='store-greens', data=df_greens.to_dict()),
     dcc.Store(id='store-reds', data=df_reds.to_dict()),
     dcc.Store(id='store-mkt-list-green', data=df_mkt_list_green.to_dict()),
@@ -27,7 +27,7 @@ app.layout = html.Div(children=[
             html.Div(id="page-content", style={"height": "100vh", "display": "flex", "justify-content": "center"})
         ]),
     ])
-], style={"padding": "0px"})
+], fluid=True, style={"height": "100vh"})
 
 
 # =========  Callbacks Index  =========== #
@@ -79,13 +79,21 @@ def render_page_content(pathname, login_state, register_state):
             # return dashboard.render_layout(register_state)
             return dashboard.render_layout(register_state)
 
-    if pathname == "/extratos":
+    if pathname == "/extratos_greens":
         if current_user.is_authenticated:
-            return extratos.render_layout(current_user.username)
+            return extratos_greens.render_layout(current_user.username)
         else:
             # Não esquecer de retornar o login
             # return dashboard.render_layout(register_state)
-            return extratos.render_layout(register_state)
+            return extratos_greens.render_layout(register_state)
+
+    if pathname == "/extratos_reds":
+        if current_user.is_authenticated:
+            return extratos_reds.render_layout(current_user.username)
+        else:
+            # Não esquecer de retornar o login
+            # return dashboard.render_layout(register_state)
+            return extratos_reds.render_layout(register_state)
 
 
 if __name__ == "__main__":

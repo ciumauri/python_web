@@ -102,7 +102,8 @@ layout = dbc.Col([
                                         html.Legend('Remover Mercado', style={'color': 'red'}),
                                         dbc.Checklist(
                                             id='checklist-market-green',
-                                            options=[{'label': i, 'value': i} for i in data_market_list_green['Categoria']],
+                                            options=[{'label': i, 'value': i} for i in
+                                                     data_market_list_green['Categoria']],
                                             value=[],
                                             label_checked_style={'color': 'red'},
                                             input_checked_style={'backgroundColor': 'blue', 'borderColor': 'orange'},
@@ -187,7 +188,8 @@ layout = dbc.Col([
                                         html.Legend('Remover Mercado', style={'color': 'red'}),
                                         dbc.Checklist(
                                             id='checklist-market-red',
-                                            options=[{'label': i, 'value': i} for i in data_market_list_red['Categoria']],
+                                            options=[{'label': i, 'value': i} for i in
+                                                     data_market_list_red['Categoria']],
                                             value=[],
                                             label_checked_style={'color': 'red'},
                                             input_checked_style={'backgroundColor': 'blue', 'borderColor': 'orange'},
@@ -215,7 +217,11 @@ layout = dbc.Col([
             html.Hr(),
             dbc.Nav([
                 dbc.NavLink("Dashboard", href="/dashboard", active="exact"),
-                dbc.NavLink("Extratos", href="/extratos", active="exact"),
+                dbc.DropdownMenu(
+                    [
+                        dbc.DropdownMenuItem("Entradas Green's", href="/extratos_greens"),
+                        dbc.DropdownMenuItem("Entradas Red's", href="/extratos_reds"),
+                    ], label="Extratos", nav=True, in_navbar=True, style={'color': '#fff'}),
             ], vertical=True, pills=True, id="nav_buttons", style={"margin-bottom": "50px"}),
         ], className="card_sidebar align-self-center"),
 ], id="sidebar_container")
@@ -232,6 +238,7 @@ def toggle_modal_green(n, is_open):
     if n:
         return not is_open
 
+
 # Pop-up Red
 @app.callback(
     Output('modal-new-red', 'is_open'),
@@ -241,6 +248,7 @@ def toggle_modal_green(n, is_open):
 def toggle_modal_green(n, is_open):
     if n:
         return not is_open
+
 
 # Salvar novo Green
 @app.callback(
@@ -293,7 +301,7 @@ def save_new_red(n, desc, value, date, odd, market, dict_reds):
         market = market[0] if type(market) == list else market
         odd = round(float(odd), 2)
 
-        df_reds.loc[df_greens.shape[0]] = [value, date, odd, market, desc]
+        df_reds.loc[df_reds.shape[0]] = [value, date, odd, market, desc]
         df_reds.to_csv('datas/df_reds.csv')
 
     data_return = df_reds.to_dict()
@@ -319,21 +327,22 @@ def save_new_red(n, desc, value, date, odd, market, dict_reds):
     ]
 )
 def add_remove_market_green(n_add, n_remove, new_market, market_remove, dict_mkt_list):
-    data_market_list = list(dict_mkt_list['Categoria'].values())
+    data_market_list_green = list(dict_mkt_list['Categoria'].values())
 
     if n_add and not (new_market == "" or new_market is None):
-        data_market_list = data_market_list + [new_market] if new_market not in data_market_list else data_market_list
+        data_market_list_green = data_market_list_green + [
+            new_market] if new_market not in data_market_list_green else data_market_list_green
 
     if n_remove:
         if len(market_remove) > 0:
-            data_market_list = [i for i in data_market_list if i not in market_remove]
+            data_market_list_green = [i for i in data_market_list_green if i not in market_remove]
 
-    opt_market_list = [{'label': i, 'value': i} for i in data_market_list]
-    df_mkt_list = pd.DataFrame(data_market_list, columns=['Categoria'])
-    df_mkt_list.to_csv('datas/df_mkt_list.csv')
-    data_return = df_mkt_list.to_dict()
+    opt_market_list_green = [{'label': i, 'value': i} for i in data_market_list_green]
+    df_mkt_list_green = pd.DataFrame(data_market_list_green, columns=['Categoria'])
+    df_mkt_list_green.to_csv('datas/df_mkt_list_green.csv')
+    data_return = df_mkt_list_green.to_dict()
 
-    return [opt_market_list, opt_market_list, [], data_return]
+    return [opt_market_list_green, opt_market_list_green, [], data_return]
 
 
 # Add/Remove Mercados RED
@@ -355,18 +364,19 @@ def add_remove_market_green(n_add, n_remove, new_market, market_remove, dict_mkt
     ]
 )
 def add_remove_market_red(n_add, n_remove, new_market, market_remove, dict_mkt_list):
-    data_market_list = list(dict_mkt_list['Categoria'].values())
+    data_market_list_red = list(dict_mkt_list['Categoria'].values())
 
     if n_add and not (new_market == "" or new_market is None):
-        data_market_list = data_market_list + [new_market] if new_market not in data_market_list else data_market_list
+        data_market_list_red = data_market_list_red + [
+            new_market] if new_market not in data_market_list_red else data_market_list_red
 
     if n_remove:
         if len(market_remove) > 0:
-            data_market_list = [i for i in data_market_list if i not in market_remove]
+            data_market_list_red = [i for i in data_market_list_red if i not in market_remove]
 
-    opt_market_list = [{'label': i, 'value': i} for i in data_market_list]
-    df_mkt_list = pd.DataFrame(data_market_list, columns=['Categoria'])
-    df_mkt_list.to_csv('datas/df_mkt_list.csv')
-    data_return = df_mkt_list.to_dict()
+    opt_market_list_red = [{'label': i, 'value': i} for i in data_market_list_red]
+    df_mkt_list_red = pd.DataFrame(data_market_list_red, columns=['Categoria'])
+    df_mkt_list_red.to_csv('datas/df_mkt_list_red.csv')
+    data_return = df_mkt_list_red.to_dict()
 
-    return [opt_market_list, opt_market_list, [], data_return]
+    return [opt_market_list_red, opt_market_list_red, [], data_return]
