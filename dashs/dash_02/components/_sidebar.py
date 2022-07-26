@@ -77,8 +77,8 @@ layout = dbc.Col([
                         dbc.Col([
                             dbc.Label('Mercados : '),
                             dbc.Select(id='market-select-green',
-                                       options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
-                                       value=data_market_list['Categoria'][0]),
+                                       options=[{'label': i, 'value': i} for i in data_market_list_green['Categoria']],
+                                       value=data_market_list_green['Categoria'][0]),
                         ], width=4),
                     ], style={"margin-top": "25px", "margin-bottom": "25px", }),
 
@@ -102,7 +102,7 @@ layout = dbc.Col([
                                         html.Legend('Remover Mercado', style={'color': 'red'}),
                                         dbc.Checklist(
                                             id='checklist-market-green',
-                                            options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
+                                            options=[{'label': i, 'value': i} for i in data_market_list_green['Categoria']],
                                             value=[],
                                             label_checked_style={'color': 'red'},
                                             input_checked_style={'backgroundColor': 'blue', 'borderColor': 'orange'},
@@ -162,8 +162,8 @@ layout = dbc.Col([
                         dbc.Col([
                             dbc.Label('Mercados : '),
                             dbc.Select(id='market-select-red',
-                                       options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
-                                       value=data_market_list['Categoria'][0]),
+                                       options=[{'label': i, 'value': i} for i in data_market_list_red['Categoria']],
+                                       value=data_market_list_red['Categoria'][0]),
                         ], width=4),
                     ], style={"margin-top": "25px", "margin-bottom": "25px", }),
 
@@ -187,7 +187,7 @@ layout = dbc.Col([
                                         html.Legend('Remover Mercado', style={'color': 'red'}),
                                         dbc.Checklist(
                                             id='checklist-market-red',
-                                            options=[{'label': i, 'value': i} for i in data_market_list['Categoria']],
+                                            options=[{'label': i, 'value': i} for i in data_market_list_red['Categoria']],
                                             value=[],
                                             label_checked_style={'color': 'red'},
                                             input_checked_style={'backgroundColor': 'blue', 'borderColor': 'orange'},

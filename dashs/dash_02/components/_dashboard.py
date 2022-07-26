@@ -185,7 +185,7 @@ def populate_entries_balance(greens, reds):
     ]
 )
 def update_output(data_greens, data_reds, greens, reds):
-    import pdb 
+
     df_greens = pd.DataFrame(data_greens).set_index('Date')[['Value']]
     df_gn = df_greens.groupby('Date').sum().rename(columns={'Value': 'Greens'})
 
@@ -199,7 +199,7 @@ def update_output(data_greens, data_reds, greens, reds):
     fig = go.Figure()
     fig.add_trace(go.Scatter(name="Fluxo de Caixa", x=df_acum.index, y=df_acum['Acum'], mode='lines+markers'))
 
-    fig.update_layout(margin=graph_margin, height=400)
+    fig.update_layout(margin=graph_margin, height=300)
     fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-    pdb.set_trace()
+
     return fig
