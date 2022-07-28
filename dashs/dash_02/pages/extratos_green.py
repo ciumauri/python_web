@@ -14,7 +14,7 @@ from flask_login import login_user, logout_user, current_user
 from dash.exceptions import PreventUpdate
 
 
-from components import _sidebar, _extratos
+from components import _sidebar, _extratos_green
 
 
 # =========  Layout  =========== #
@@ -25,7 +25,7 @@ def render_layout(username):
                 _sidebar.layout
             ], md=2),
             dbc.Col([
-                _extratos.layout
+                _extratos_green.layout
             ], md=10),
         ]),
 

@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 from flask_login import current_user, LoginManager
 
 from app import *
-from pages import login, register, dashboard, extratos_greens
+from pages import login, register, dashboard, extratos_green, extratos_red
 from globals import *
 
 login_manager = LoginManager()
@@ -79,21 +79,21 @@ def render_page_content(pathname, login_state, register_state):
             # return dashboard.render_layout(register_state)
             return dashboard.render_layout(register_state)
 
-    if pathname == "/extratos_greens":
+    if pathname == "/extratos_green":
         if current_user.is_authenticated:
-            return extratos_greens.render_layout(current_user.username)
+            return extratos_green.render_layout(current_user.username)
         else:
             # Não esquecer de retornar o login
             # return dashboard.render_layout(register_state)
-            return extratos_greens.render_layout(register_state)
+            return extratos_green.render_layout(register_state)
 
-    if pathname == "/extratos_reds":
+    if pathname == "/extratos_red":
         if current_user.is_authenticated:
-            return extratos_reds.render_layout(current_user.username)
+            return extratos_red.render_layout(current_user.username)
         else:
             # Não esquecer de retornar o login
             # return dashboard.render_layout(register_state)
-            return extratos_reds.render_layout(register_state)
+            return extratos_red.render_layout(register_state)
 
 
 if __name__ == "__main__":

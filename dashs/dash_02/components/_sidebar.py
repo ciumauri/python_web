@@ -219,8 +219,8 @@ layout = dbc.Col([
                 dbc.NavLink("Dashboard", href="/dashboard", active="exact"),
                 dbc.DropdownMenu(
                     [
-                        dbc.DropdownMenuItem("Entradas Green's", href="/extratos_greens"),
-                        dbc.DropdownMenuItem("Entradas Red's", href="/extratos_reds"),
+                        dbc.DropdownMenuItem("Green's", href="/extratos_green"),
+                        dbc.DropdownMenuItem("Red's", href="/extratos_red"),
                     ], label="Extratos", nav=True, in_navbar=True, style={'color': '#fff'}),
             ], vertical=True, pills=True, id="nav_buttons", style={"margin-bottom": "50px"}),
         ], className="card_sidebar align-self-center"),
